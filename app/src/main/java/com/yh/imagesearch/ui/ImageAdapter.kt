@@ -31,8 +31,7 @@ class ImageAdapter: RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
         holder.bind(dataList[position])
     }
 
-    override fun getItemCount(): Int {  
-        Log.d("test0608", "size " + dataList.size)
+    override fun getItemCount(): Int {
         return dataList.size
     }
 

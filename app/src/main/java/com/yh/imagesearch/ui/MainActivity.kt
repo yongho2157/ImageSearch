@@ -1,7 +1,6 @@
 package com.yh.imagesearch.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.yh.imagesearch.R

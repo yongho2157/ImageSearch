@@ -23,7 +23,6 @@ class MainViewModel @Inject constructor(
     fun images() {
         CoroutineScope(Dispatchers.IO).launch {
             if (!inputTextLiveData.value.isNullOrEmpty()) {
-                Log.d("test0608", "1")
                 when (val result = pixaBayRepository.getImages(inputTextLiveData.value!!)) {
                     is Result.Success ->
                         viewStateChange(MainViewState.GetImages(result.data.hits))
@@ -32,7 +31,6 @@ class MainViewModel @Inject constructor(
                             ?: "데이터를 가져오지 못했습니다."))
                 }
             } else {
-                Log.d("test0608", "4")
                 viewStateChange(MainViewState.Error("데이터가 없습니다."))
             }
         }
