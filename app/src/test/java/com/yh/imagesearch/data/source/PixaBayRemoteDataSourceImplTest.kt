@@ -15,6 +15,7 @@ import org.mockito.Mockito
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 class PixaBayRemoteDataSourceImplTest {
 
@@ -30,6 +31,13 @@ class PixaBayRemoteDataSourceImplTest {
     @Test
     fun getImagesSuccessTest() = runBlocking {
         assertEquals((pixaBayRemoteDataSource.getImages(searchText = "고양이") as Result.Success).data, pixaBayDto)
+    }
+
+    @Test
+    fun getImagesFailureTest() = runBlocking {
+        val failResult = Result.Error(Exception("에러가 발생"))
+        Mockito.`when`(pixaBatService.getImages(key = "27905063-0e6d99ff35ddb4a834e3311fd", searchText = "고양이", imageType = "photo")).then {failResult}
+        assertEquals((pixaBayRemoteDataSource.getImages("ㅂ") as Result.Error).exception.message, failResult.exception.message)
     }
 
     private fun initMockPixaBayApi() {
