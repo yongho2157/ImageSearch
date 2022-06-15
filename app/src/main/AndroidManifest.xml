@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ImageSearch"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.ManActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
