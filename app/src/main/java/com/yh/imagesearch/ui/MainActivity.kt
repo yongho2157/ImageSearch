@@ -21,7 +21,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         initViewModel()
     }
 
-    fun initUi() {
+    private fun initUi() {
         with(binding) {
             viewModel = mainViewModel
             rv.adapter = itemAdapter
@@ -29,7 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
     }
 
-    fun initViewModel() {
+    private fun initViewModel() {
         mainViewModel.viewStateLiveData.observe(this) { viewState->
             when (viewState) {
                 is MainViewState.GetImages ->
@@ -38,7 +38,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
     }
 
-    fun getImage(images: List<PixaBayModel>) {
+    private fun getImage(images: List<PixaBayModel>) {
         val mockList = ArrayList<String>().apply {
             for (i in images.indices) {
                 this.add(images[i].previewURL)
@@ -47,8 +47,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         itemAdapter.addAll(mockList)
 
-
     }
-
 
 }

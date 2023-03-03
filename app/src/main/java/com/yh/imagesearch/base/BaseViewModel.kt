@@ -21,7 +21,6 @@ abstract class BaseViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-
 }
 
 interface ViewState
