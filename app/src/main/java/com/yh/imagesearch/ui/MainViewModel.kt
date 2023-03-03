@@ -1,7 +1,6 @@
 package com.yh.imagesearch.ui
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.yh.imagesearch.base.BaseViewModel
 import com.yh.imagesearch.data.repo.PixaBayRepository

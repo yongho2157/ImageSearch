@@ -22,12 +22,4 @@ object RetrofitModule {
             .build()
             .create(PixaBayService::class.java)
     }
-    }
-////    fun providePixaBayApi(): PixaBayService {
-////        return Retrofit.Builder()
-//            .baseUrl("https://pixabay.com/")
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//            .create(PixaBayService::class.java)
-//    }
-//}
+}
